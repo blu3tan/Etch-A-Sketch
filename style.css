@@ -1,0 +1,56 @@
+
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: lightgrey;
+    color: #232D22;
+}
+h1 {
+    font-weight:bold;
+    font-size: 2.5rem;
+    margin: 0;
+}
+a, span {
+    color: #232D22;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.pixel > div {
+    box-shadow:   -10px 0 0 0 #232D22,
+                 10px 0 0 0 #232D22,
+                 0 -10px 0 0 #232D22,
+                 0 10px 0 0 #232D22;
+}
+.top-box {
+    display: flex;
+    max-height:fit-content;
+    gap: 30px;
+}
+.center-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.sketch {
+    height: 960px;
+    width: 960px;
+    background-color: white;
+}
+.tools {
+    flex: 1;
+    background-color: #81C774;
+}
+.top-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 50%;
+    padding: 10px;
+    background-color: #FAEF4C;
+}
