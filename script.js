@@ -26,4 +26,4 @@ function createCanvas(num) {
     }        
  }
 
-createCanvas(16);
+createCanvas(20);
