@@ -14,6 +14,7 @@ body {
 h1 {
     font-weight:bold;
     font-size: 2.5rem;
+    padding-left: 10px;
     margin: 0;
 }
 a, span {
@@ -100,6 +101,7 @@ input:focus {
     font-size: 1.6rem;
     height: 60px;
     width: 250px;
+    cursor: pointer;
     box-shadow: -10px 0 0 0 #232D22,
                 10px 0 0 0 #232D22,
                 0 -10px 0 0 #232D22,

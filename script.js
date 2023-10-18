@@ -1,6 +1,20 @@
 
 const canvasContainer = document.getElementById('sketch');
+const inputBox = document.getElementById('inputBox');
+const resetButton = document.getElementById('resetBtn');
+let grid;
 
+//  Grid generation process // 
+resetButton.addEventListener('click', () => {
+    canvasContainer.innerHTML = '';
+    createCanvas(grid);
+});
+
+inputBox.addEventListener('input', () => {
+    grid = Number(inputBox.value);
+})
+
+// ------------------------------------------- //
 
 function createRows (container,num) {
     for (let i = num; i > 0; i--) {
@@ -26,4 +40,5 @@ function createCanvas(num) {
     }        
  }
 
-createCanvas(20);
+createCanvas(1);
+console.log(grid);
