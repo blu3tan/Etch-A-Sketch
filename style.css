@@ -69,14 +69,28 @@ a, span {
 }
 input.input-box {
     font-family:inherit;
-    font-size: inherit;
+    font-size: 1.6rem;
+    padding-left: 10px;
     border-style: none;
     height: 60px;
     width: 250px;
+    color: #232D22;
     box-shadow:   -10px 0 0 0 #232D22,
                  10px 0 0 0 #232D22,
                  0 -10px 0 0 #232D22,
                  0 10px 0 0 #232D22;
+}
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    font-size: 1.4rem;
+    color: #232D22;
+    opacity: 0.3;
+}
+::placeholder {
+    opacity: 0.3;
 }
 input:focus {
     outline: none;
@@ -110,9 +124,12 @@ input:focus {
 .reset {
     background-color: #E86E55;
 }
-
+.title {
+    max-width: 960px;
+}
 .top-content {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     gap: 10px;

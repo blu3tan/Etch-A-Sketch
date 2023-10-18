@@ -2,19 +2,42 @@
 const canvasContainer = document.getElementById('sketch');
 const inputBox = document.getElementById('inputBox');
 const resetButton = document.getElementById('resetBtn');
-let grid;
-
-//  Grid generation process // 
-resetButton.addEventListener('click', () => {
-    canvasContainer.innerHTML = '';
-    createCanvas(grid);
-});
+const message = document.getElementById('messageText');
 
 inputBox.addEventListener('input', () => {
-    grid = Number(inputBox.value);
+    grid = inputBox.value;
 })
 
-// ------------------------------------------- //
+//  New grid from user input // 
+resetButton.addEventListener('click', () => {
+    let gridNum = Number(inputBox.value);
+    if (isNaN(gridNum)) {
+        message.textContent ='# Must be a number';
+        clearCanvas(sketch);
+        inputBox.value = '';
+        createCanvas(16);
+    }
+    else if (gridNum <= 3 || gridNum > 100) {
+        message.textContent ='# Values from 4 to 100';
+        clearCanvas(sketch);
+        inputBox.value = '';
+        createCanvas(16);
+    }
+    else {
+        message.textContent ='# Insert a number';
+        inputBox.value = '';
+        clearCanvas(sketch);
+        createCanvas(gridNum);
+    }
+});
+
+function clearCanvas(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
+// Canvas generation //
 
 function createRows (container,num) {
     for (let i = num; i > 0; i--) {
@@ -40,5 +63,4 @@ function createCanvas(num) {
     }        
  }
 
-createCanvas(1);
-console.log(grid);
+createCanvas(16);
