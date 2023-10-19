@@ -96,7 +96,9 @@ input.input-box {
     font-size: 1.2rem;
     color: #232D22;
     opacity: 0.3;
+    white-space: break-spaces;
 }
+
 ::placeholder {
     opacity: 0.3;
 }

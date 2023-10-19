@@ -11,27 +11,27 @@ inputBox.addEventListener('input', () => {
     grid = inputBox.value;
 })
 
-// square.addEventListener('mousedown', () => {
-//     square.classList.add('draw');
-// })
+document.addEventListener('mouseup', () => {
+    isMousedown = false;
+})
 
 //  New grid from user input // 
 resetButton.addEventListener('click', () => {
     let gridNum = Number(inputBox.value);
     if (isNaN(gridNum)) {
-        message.textContent ='# Must be a number';
+        message.textContent ='The input must be a number';
         clearCanvas(sketch);
         inputBox.value = '';
         createCanvas(16);
     }
     else if (gridNum <= 3 || gridNum > 100) {
-        message.textContent ='# Values from 4 to 100';
+        message.textContent ='Only values between 4 and 100';
         clearCanvas(sketch);
         inputBox.value = '';
         createCanvas(16);
     }
     else {
-        message.textContent ='# Insert a number';
+        message.textContent = `New canvas size:\n${gridNum} x ${gridNum}`;
         inputBox.value = '';
         clearCanvas(sketch);
         createCanvas(gridNum);
