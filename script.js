@@ -5,6 +5,8 @@ const resetButton = document.getElementById('resetBtn');
 const message = document.getElementById('messageText');
 const square = document.getElementsByClassName('canvas-square')
 
+let isMousedown = false;
+
 inputBox.addEventListener('input', () => {
     grid = inputBox.value;
 })
@@ -57,9 +59,14 @@ function createSquares (container,num) {
         const square = document.createElement('div');
         square.classList.add('canvas-square');
         square.addEventListener('mousedown', () => {
+            isMousedown = true;
             square.classList.add('draw');
-        })
+        });
+        square.addEventListener('mouseup', () => {
+            isMousedown = false;
+        });
         container.appendChild(square);
+        mouseDraw(square);
     }
 }
 
@@ -70,5 +77,13 @@ function createCanvas(num) {
         createSquares(rowsCreated[i], num);
     }        
  }
+
+function mouseDraw (element) {
+        element.addEventListener('mousemove', () => {
+            if (isMousedown) {
+                element.classList.add('draw');
+            }
+        });
+    }
 
 createCanvas(16);
