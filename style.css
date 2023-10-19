@@ -137,13 +137,44 @@ input:focus {
     height: 50px;
     width: 200px;
     cursor: pointer;
-    box-shadow: -10px 0 0 0 #232D22,
+    box-shadow: -10px 0 0 0 #232D22, -6px -6px 0 0 #232d224c inset,
+                10px 0 0 0 #232D22,
+                0 -10px 0 0 #232D22,
+                0 10px 0 0 #232D22;
+}
+.btn:hover {
+    background-color: #0F8DE0;
+}
+.btn:active {
+    box-shadow: -10px 0 0 0 #232D22, 6px 6px 0 0 #232d224c inset,
                 10px 0 0 0 #232D22,
                 0 -10px 0 0 #232D22,
                 0 10px 0 0 #232D22;
 }
 .newGrid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #91CC42;
+    color: #fff;
+    font-weight:700;
+    font-size: 1rem;
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+    box-shadow: -10px 0 0 0 #232D22, -6px -6px 0 0 #232d224c inset,
+                10px 0 0 0 #232D22,
+                0 -10px 0 0 #232D22,
+                0 10px 0 0 #232D22;
+}
+.newGrid:hover {
+    background-color: #75C442;
+}
+.newGrid:active {
+    box-shadow: -10px 0 0 0 #232D22, 6px 6px 0 0 #232d224c inset,
+                10px 0 0 0 #232D22,
+                0 -10px 0 0 #232D22,
+                0 10px 0 0 #232D22;
 }
 .title, .credits {
     flex: 1;
@@ -154,7 +185,6 @@ input:focus {
     align-items: flex-start;
     justify-content: center;
     gap: 10px;
-    /* width: 100%; */
     padding: 10px;
     background-color: #F7D41F;
 }
