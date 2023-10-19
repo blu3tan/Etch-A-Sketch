@@ -3,10 +3,15 @@ const canvasContainer = document.getElementById('sketch');
 const inputBox = document.getElementById('inputBox');
 const resetButton = document.getElementById('resetBtn');
 const message = document.getElementById('messageText');
+const square = document.getElementsByClassName('canvas-square')
 
 inputBox.addEventListener('input', () => {
     grid = inputBox.value;
 })
+
+// square.addEventListener('mousedown', () => {
+//     square.classList.add('draw');
+// })
 
 //  New grid from user input // 
 resetButton.addEventListener('click', () => {
@@ -51,6 +56,9 @@ function createSquares (container,num) {
     for (let i = num; i > 0; i--) {
         const square = document.createElement('div');
         square.classList.add('canvas-square');
+        square.addEventListener('mousedown', () => {
+            square.classList.add('draw');
+        })
         container.appendChild(square);
     }
 }
