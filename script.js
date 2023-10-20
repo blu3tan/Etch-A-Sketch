@@ -2,15 +2,28 @@
 const canvasContainer = document.getElementById('sketch');
 const inputBox = document.getElementById('inputBox');
 const resetButton = document.getElementById('resetBtn');
+const eraseButton = document.getElementById('eraseBtn');
+const blackButton = document.getElementById('blackBtn');
 const message = document.getElementById('messageText');
 const square = document.getElementsByClassName('canvas-square')
 
 let isMousedown = false;
+const colors = ['black', 'erase'];
+let selector = 0;
 
 inputBox.addEventListener('input', () => {
     grid = inputBox.value;
 })
 
+eraseButton.addEventListener('click', () => {
+    selector = 1;
+})
+
+blackButton.addEventListener('click', () => {
+    selector = 0;
+})
+
+// Catch mouseup event outside the canvas
 document.addEventListener('mouseup', () => {
     isMousedown = false;
 })
@@ -20,15 +33,11 @@ resetButton.addEventListener('click', () => {
     let gridNum = Number(inputBox.value);
     if (isNaN(gridNum)) {
         message.textContent ='The input must be a number';
-        clearCanvas(sketch);
         inputBox.value = '';
-        createCanvas(16);
     }
     else if (gridNum <= 3 || gridNum > 100) {
         message.textContent ='Only values between 4 and 100';
-        clearCanvas(sketch);
         inputBox.value = '';
-        createCanvas(16);
     }
     else {
         message.textContent = `New canvas size:\n${gridNum} x ${gridNum}`;
@@ -58,15 +67,9 @@ function createSquares (container,num) {
     for (let i = num; i > 0; i--) {
         const square = document.createElement('div');
         square.classList.add('canvas-square');
-        square.addEventListener('mousedown', () => {
-            isMousedown = true;
-            square.classList.add('draw');
-        });
-        square.addEventListener('mouseup', () => {
-            isMousedown = false;
-        });
         container.appendChild(square);
-        mouseDraw(square);
+        selector = 0;
+        initDraw(square);
     }
 }
 
@@ -78,12 +81,30 @@ function createCanvas(num) {
     }        
  }
 
-function mouseDraw (element) {
-        element.addEventListener('mousemove', () => {
-            if (isMousedown) {
-                element.classList.add('draw');
-            }
-        });
+// Initialization of the drawing mechanism
+
+function initDraw (element) {
+    element.addEventListener('mousedown', () => {
+        isMousedown = true;
+        clearClasses(element);
+        element.classList.add(colors[selector]);
+    });
+    element.addEventListener('mouseup', () => {
+        isMousedown = false;
+    });
+    element.addEventListener('mousemove', () => {
+        if (isMousedown) {
+            clearClasses(element);
+            element.classList.add(colors[selector]);
+        }
+    });
+}
+
+function clearClasses (element) {
+    for (let i = 0; i < colors.length; i++) {
+        element.classList.remove(colors[i]);
     }
+}
+
 
 createCanvas(16);
