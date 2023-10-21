@@ -25,9 +25,8 @@ blackButton.addEventListener('click', () => {
 })
 
 rainbowButton.addEventListener('click', () => {
-    color = 'pink';
+    color = 'rainbow'
 })
-
 // Catch mouseup event outside the canvas
 document.addEventListener('mouseup', () => {
     isMousedown = false;
@@ -96,26 +95,29 @@ function initDraw (element) {
     element.addEventListener('mousemove', changeColorMove);
 }
 
-function clearClasses (element) {
-    for (let i = 0; i < colors.length; i++) {
-        element.classList.remove(colors[i]);
-    }
-}
-
-function randomColor() {
-    let hexColor = '#' + (Math.random().toString(16) + "000000").substring(2,8).toUpperCase();
-    return hexColor;
-}
-
 function changeColor () {
     isMousedown = true;
-    this.style.backgroundColor = color;
+    if (color === 'rainbow') {
+        this.style.backgroundColor = '#' + (Math.random().toString(16) + "000000").substring(2,8).toUpperCase();
+    }
+    else {
+        this.style.backgroundColor = color;
+    }
 } 
 function changeColorMove () {
-    if (isMousedown) {
-        this.style.backgroundColor = color;
-        // Prevents the conflict with the browser drag behaviour
-        element.ondragstart = () => false;
+    if (color === 'rainbow') {
+        if (isMousedown) {
+            this.style.backgroundColor = '#' + (Math.random().toString(16) + "000000").substring(2,8).toUpperCase();
+            // Prevents the conflict with the browser drag behaviour
+            element.ondragstart = () => false;
+        }
+    }
+    else {
+        if (isMousedown) {
+            this.style.backgroundColor = color;
+            // Prevents the conflict with the browser drag behaviour
+            element.ondragstart = () => false;
+        }
     }
 } 
 
