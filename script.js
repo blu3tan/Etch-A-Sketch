@@ -11,7 +11,7 @@ const square = document.getElementsByClassName('canvas-square')
 
 let isMousedown = false;
 let color = 'black';
-let opacityStatus = 0;
+let opacityStatus = 0.1;
 
 // inputBox.addEventListener('input', () => {
 //     grid = inputBox.value;
@@ -31,7 +31,6 @@ rainbowButton.addEventListener('click', () => {
 
 shadeButton.addEventListener('click', () => {
     color = 'shade'
-    console.log(opacityStatus);
 })
 
 // Catch mouseup event outside the canvas
@@ -98,6 +97,7 @@ function initDraw (element) {
     element.addEventListener('mousedown', changeColor);
     element.addEventListener('mouseup', () => {
         isMousedown = false;
+        opacityStatus = 0;
     });
     element.addEventListener('mouseenter', changeColorMove);
 }
@@ -108,10 +108,7 @@ function changeColor () {
         this.style.backgroundColor = '#' + (Math.random().toString(16) + "000000").substring(2,8).toUpperCase();
     }
     else if (color === 'shade') {
-        if (opacityStatus < 1) {
-            opacityStatus += 0.1;
-            this.style.cssText = `background-color: rgba(0,0,0,${opacityStatus})`;
-        }
+        shade(this);
     }
     else {
         this.style.backgroundColor = color;
@@ -122,26 +119,35 @@ function changeColorMove () {
         if (isMousedown) {
             this.style.backgroundColor = '#' + (Math.random().toString(16) + "000000").substring(2,8).toUpperCase();
             // Prevents the conflict with the browser drag behaviour
-            this.ondragstart = () => false;
+            document.ondragstart = () => false;
         }
     }
     else if (color === 'shade') {
         if (isMousedown) {
-        if (opacityStatus < 1) {
-            opacityStatus += 0.1;
-            this.style.cssText = `background-color: rgba(0,0,0,${opacityStatus})`;
-            this.ondragstart = () => false;
-        }
+            shade(this);
         }
     }
     else {
         if (isMousedown) {
             this.style.backgroundColor = color;
             // Prevents the conflict with the browser drag behaviour
-            element.ondragstart = () => false;
+            document.ondragstart = () => false;
         }
     }
 }
 
+
+function shade (item) {
+    if (opacityStatus < 1) {
+        opacityStatus += 0.1;
+            item.style.cssText = `background-color: rgba(0,0,0,${opacityStatus})`;
+            console.log(opacityStatus);
+            document.ondragstart = () => false;
+    }
+    else {
+        opacityStatus = 0;
+        shade(item);
+    }
+}
 
 createCanvas(16);

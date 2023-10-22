@@ -220,3 +220,46 @@ input:focus {
 div.canvas-square:hover {
     background-color: rgb(223, 223, 223);
 }
+
+@media (max-width: 1000px) {
+
+.main-container {
+    align-items: center;
+}
+.top-box, .center-box {
+    display: block;
+}
+.sketch {
+        width: 400px;
+        height: 400px;
+        margin-bottom: 30px;
+}
+
+.tools {
+    width: 400px;
+    flex-direction: column-reverse;
+}
+input.input-box {
+    font-size: 1rem;
+    width: 150px;
+    height: 50px;
+}
+.btn, .newGrid {
+    font-size: 1rem;
+    width: 150px;
+    height: 50px; 
+}
+.title, .credits, .guide {
+    width: 400px;
+}
+.message {
+    font-size: 1rem;
+}
+h1 {
+    font-size: 1.4rem;
+}
+.title {
+    margin: 0 0 30px 0;
+}
+
+}
