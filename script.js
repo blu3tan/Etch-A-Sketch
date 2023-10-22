@@ -29,6 +29,8 @@ shadeButton.addEventListener('click', () => {
     color = 'shade'
 })
 
+canvasContainer.addEventListener('touchmove', function(e){ e.preventDefault(); });
+
 // Catch mouseup event outside the canvas
 document.addEventListener('pointerup', () => {
     isMousedown = false;
