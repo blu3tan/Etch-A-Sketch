@@ -5,8 +5,8 @@ This is my version of the Etch a Sketch exercise, it is inspired graphically
 by the ui style of the Classic NES.
 
 Just a note about the shading function.
-Now that i am done i've seen that others have interpreted the assignement in other
-ways. In my mind it was a mode ment to create a sort of faded pencil effect,
+Now that i am done i've seen that others have interpreted the assignment in other
+ways. In my mind it was a mode meant to create a sort of faded pencil effect,
 10 degrees from white to black one square to the next.
 Anyway it works and i kinda like it.
 
@@ -14,10 +14,10 @@ Overall it was very fun building it, took a lot of effort and now that is done
 i can say i have a much deeper understanding of the DOM manipulation,
 in particular events listeners.
 
-I'm approaching every project as if it was a real website or web-app ment to be
+I'm approaching every project as if it was a real website or web-app meant to be
 used by someone (even tho actually it is already).
 I always try to set up an interesting (at least imo) ui, a smooth ux and
-at least mobyle responsiveness.
+at least mobile responsiveness.
 
 Enjoy.
 
