@@ -7,7 +7,7 @@ body {
     padding: 10px 30px;
     font-family: 'Press Start 2P', 'Space Grotesk', sans-serif;
     font-size: 1rem;
-    line-height: 20px;
+    line-height: 25px;
     background-color: #7C7C7C;
     color: #232D22;
     display: flex;
@@ -21,6 +21,9 @@ h1 {
 }
 a, span {
     color: #232D22;
+}
+a.blu3 {
+    color: #1E9CED;
 }
 /* Basic flex container structure */
 
@@ -109,7 +112,7 @@ input:focus {
     flex-direction: column;
     flex-wrap: wrap;
     padding: 20px;
-    gap: 30px;
+    gap: 20px;
     max-width: 1030px;
     justify-content: flex-start;
     align-items: flex-start;
@@ -184,8 +187,8 @@ input:focus {
 #eraseBtn {
     background-color: #E86E55;
 }
-#erase:hover {
-    background-color: #CF382B;
+#eraseBtn:hover {
+    background-color: #d24134;
 }
 .title, .credits {
     /* flex: 1; */
