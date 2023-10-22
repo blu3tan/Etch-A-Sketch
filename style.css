@@ -230,11 +230,10 @@ div.canvas-square:hover {
     display: block;
 }
 .sketch {
-        width: 400px;
-        height: 400px;
-        margin-bottom: 30px;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 30px;
 }
-
 .tools {
     width: 400px;
     flex-direction: column-reverse;
