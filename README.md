@@ -33,9 +33,3 @@ A great thanks as always goes to the entire Odin Project community discord,
 whenever i'm stuck on a path there's always someone there to put me back on
 track.
 Much love.
-
-
-
-
-
-by <a href="https://nostalgic-css.github.io/NES.css/">NES css framework</a>
