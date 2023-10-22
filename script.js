@@ -30,7 +30,7 @@ shadeButton.addEventListener('click', () => {
 })
 
 // Catch mouseup event outside the canvas
-document.addEventListener('mouseup', () => {
+document.addEventListener('pointerup', () => {
     isMousedown = false;
 })
 
@@ -90,12 +90,12 @@ function createCanvas(num) {
 // Initialization of the drawing mechanism
 
 function initDraw (element) {
-    element.addEventListener('mousedown', changeColor);
-    element.addEventListener('mouseup', () => {
+    element.addEventListener('pointerdown', changeColor);
+    element.addEventListener('pointerup', () => {
         isMousedown = false;
         opacityStatus = 0;
     });
-    element.addEventListener('mouseenter', changeColorMove);
+    element.addEventListener('pointerenter', changeColorMove);
 }
 
 function changeColor () {
