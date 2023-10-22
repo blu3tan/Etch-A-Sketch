@@ -13,10 +13,6 @@ let isMousedown = false;
 let color = 'black';
 let opacityStatus = 0.1;
 
-// inputBox.addEventListener('input', () => {
-//     grid = inputBox.value;
-// })
-
 eraseButton.addEventListener('click', () => {
     color = 'white';
 })
@@ -135,7 +131,6 @@ function changeColorMove () {
         }
     }
 }
-
 
 function shade (item) {
     if (opacityStatus < 1) {

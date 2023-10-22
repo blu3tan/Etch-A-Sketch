@@ -215,11 +215,11 @@ input:focus {
     width: 100%;
 }
 
-/* Drawing behaviour */
-
 div.canvas-square:hover {
     background-color: rgb(223, 223, 223);
 }
+
+/* Resposive mobile */
 
 @media (max-width: 1000px) {
 
@@ -260,5 +260,4 @@ h1 {
 .title {
     margin: 0 0 30px 0;
 }
-
 }
