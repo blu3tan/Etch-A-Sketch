@@ -1,7 +1,7 @@
 # Etch-A-Sketch
 Sketchpad project for the Odin Project Foundations Course
 
-Live demo: blu3tan.github.io/Etch-A-Sketch/
+Live demo: https://blu3tan.github.io/Etch-A-Sketch/
 
 This is my version of the Etch a Sketch exercise, it is inspired graphically
 by the ui style of the Classic NES.
